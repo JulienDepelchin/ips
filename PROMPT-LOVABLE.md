@@ -69,14 +69,13 @@ Chaque carte affiche :
   - pour un établissement **privé sous contrat**, afficher sous la courbe une note :
     « Rupture de série en 2022-2023 pour le privé : l'évolution avant / après cette
     date est à interpréter avec prudence (source : Depp). »
-- Rappel : UAI, commune, secteur, IPS du dernier millésime.
+- Rappel : commune, secteur, IPS du dernier millésime. **Ne pas afficher l'UAI**
+  (ne parle à personne).
 - **Positionnement** : une petite barre / jauge situant l'établissement entre le
   minimum et le maximum observés dans l'académie pour son niveau (calcule les bornes
   à partir des données chargées). Optionnel : son rang (« 128ᵉ IPS sur 437 collèges
   de l'académie »).
-- Si `lat`/`lon` présents : une mini-carte **Leaflet + fond OpenStreetMap**
-  (`CartoDB Positron`), zoom molette **désactivé**, un seul marqueur. Pas de
-  Mapbox / Google Maps. Masquer le bloc carte si pas de coordonnées.
+- **Pas de carte** dans la fiche (n'apporte rien) — ne pas charger Leaflet.
 
 ### 5. Échelle de couleur de l'IPS
 Dégradé sobre, continu si possible, sinon 3 paliers :
@@ -84,6 +83,18 @@ Dégradé sobre, continu si possible, sinon 3 paliers :
 - 90 – 115 : neutre (gris-bleu)
 - > 115 : vert
 Couleurs douces, pas saturées. Même code couleur pour la pastille et la sparkline.
+Cette échelle rouge/neutre/vert reste indépendante du bleu de marque (voir ci-dessous).
+
+### Identité visuelle — charte La Voix du Nord
+- **Bleu VDN `#0854e8`** : couleur d'accent principale (titre, liens, focus, et
+  surtout les **filtres actifs**).
+- Gris anthracite `#23242D` pour le texte principal, blanc / gris très clair pour les fonds.
+- **Bloc filtres mis en avant** : conteneur avec un léger fond bleuté
+  (`#0854e8` à ~6 % d'opacité) ou une bordure, un peu d'air autour. Labels
+  `TYPE / DÉPARTEMENT / SECTEUR / TRI` en bleu VDN.
+- Chip de filtre **actif** : fond `#0854e8`, texte blanc. **Inactif** : fond blanc,
+  bordure gris clair, texte anthracite ; au survol, fond bleu très pâle.
+- Barre de recherche : bordure qui passe au bleu VDN au focus.
 
 ### 6. Cadre et contexte
 - **Header minimal** : titre « IPS des écoles, collèges et lycées du Nord et du
@@ -91,7 +102,10 @@ Couleurs douces, pas saturées. Même code couleur pour la pastille et la sparkl
   Académie de Lille. »
 - **Compteur** de résultats qui se met à jour : « 2 642 établissements » →
   « 214 résultats ».
-- Si > 80 résultats : n'afficher que les 80 premiers + bouton « Afficher plus ».
+- **N'afficher que les 10 premiers résultats**, jamais plus, pas de bouton
+  « Afficher plus » ni de défilement infini. Si le filtre renvoie plus de 10
+  résultats, message sous la liste : « Seuls les 10 premiers sont affichés
+  (triés par IPS décroissant). Affinez votre recherche ou utilisez les filtres. »
   La frappe dans la recherche doit rester fluide (mémoïser le filtrage).
 - **Bloc dépliable « Comprendre l'IPS »** (fermé par défaut) :
   « L'indice de position sociale (IPS) résume le milieu social des familles des
@@ -112,7 +126,6 @@ Couleurs douces, pas saturées. Même code couleur pour la pastille et la sparkl
   Tout doit rester **utilisable à la souris** (clic, molette), pas seulement au doigt.
 - Responsive via `window.matchMedia` ou media queries CSS — **jamais** une lecture
   unique de `window.innerWidth`.
-- Carte : zoom molette / pincement désactivé (sinon elle capture le scroll de la page).
 - Pas de hauteur fixe imposée en dur ; laisse le contenu déterminer la hauteur,
   garde l'ensemble compact (accordéons repliés par défaut, pas de grands vides).
 - Design sobre et journalistique : typographie lisible, beaucoup de blanc, palette
