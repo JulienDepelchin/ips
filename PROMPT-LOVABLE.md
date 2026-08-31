@@ -102,10 +102,11 @@ Cette échelle rouge/neutre/vert reste indépendante du bleu de marque (voir ci-
   Académie de Lille. »
 - **Compteur** de résultats qui se met à jour : « 2 642 établissements » →
   « 214 résultats ».
-- **N'afficher que les 10 premiers résultats**, jamais plus, pas de bouton
-  « Afficher plus » ni de défilement infini. Si le filtre renvoie plus de 10
-  résultats, message sous la liste : « Seuls les 10 premiers sont affichés
-  (triés par IPS décroissant). Affinez votre recherche ou utilisez les filtres. »
+- **N'afficher que les 5 premiers résultats**, jamais plus, pas de bouton
+  « Afficher plus » ni de défilement infini (l'app est en iframe, il faut limiter
+  la hauteur). Si le filtre renvoie plus de 5 résultats, message sous la liste :
+  « Seuls les 5 premiers sont affichés (triés par IPS décroissant). Affinez votre
+  recherche ou utilisez les filtres. »
   La frappe dans la recherche doit rester fluide (mémoïser le filtrage).
 - **Bloc dépliable « Comprendre l'IPS »** (fermé par défaut) :
   « L'indice de position sociale (IPS) résume le milieu social des familles des
