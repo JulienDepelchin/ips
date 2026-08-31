@@ -1,47 +1,74 @@
 # IPS des établissements de l'académie de Lille (Nord–Pas-de-Calais)
 
-Moteur de recherche permettant au public de retrouver l'indice de position sociale (IPS)
-des écoles, collèges et lycées de l'académie de Lille.
+Moteur de recherche public de l'**indice de position sociale (IPS)** des écoles,
+collèges et lycées de l'académie de Lille, avec l'**évolution année par année
+depuis 2016**.
 
 ## Qu'est-ce que l'IPS ?
 
-L'**indice de position sociale** est un indicateur construit par la Depp (service
-statistique du ministère de l'Éducation nationale). Il résume la situation sociale
-des familles des élèves d'un établissement à partir de la profession des parents.
+Indicateur construit par la **Depp** (service statistique du ministère de
+l'Éducation nationale). Il résume la situation sociale des familles des élèves d'un
+établissement à partir de la profession et catégorie socioprofessionnelle (PCS)
+des parents.
 
-- Plus l'IPS est **élevé**, plus le milieu social des élèves est **favorisé**.
-- L'IPS moyen est calé autour de **100** au niveau national ; pour les écoles, la
-  référence nationale de ce millésime est de **105,5** (colonne `ips_national` du
-  fichier source).
-- Il permet de comparer des établissements et de neutraliser en partie l'effet du
-  recrutement social quand on analyse d'autres résultats (brevet, bac…).
+- Plus l'IPS est **élevé**, plus le public de l'établissement est **favorisé**.
+- Ce n'est **pas** une note de qualité : c'est une photographie du recrutement social.
+- Repères du dernier millésime :
 
-## Source des données
+| Niveau | IPS moyen national | IPS moyen académie de Lille |
+|---|---|---|
+| Écoles (2024-2025) | 105,8 | 98,5 |
+| Collèges (2025-2026) | 106,2 | 99,8 |
+| Lycées – voie GT (2025-2026) | 120,2 | 114,2 |
 
-Fichiers publiés en open data par le ministère de l'Éducation nationale sur
-[data.education.gouv.fr](https://data.education.gouv.fr) :
+L'académie de Lille se situe donc **en dessous de la moyenne nationale** à tous les niveaux.
 
-| Niveau    | Jeu de données |
-|-----------|----------------|
-| Écoles    | « IPS des écoles » |
-| Collèges  | « IPS des collèges » |
-| Lycées    | « IPS des lycées » (IPS voie GT / voie pro) |
+## Sources
 
-- **Millésime : rentrée scolaire 2023-2024.**
-- Périmètre : `libelle_academie = "Lille"` (départements du Nord et du Pas-de-Calais).
-- Producteur : Depp (Direction de l'évaluation, de la prospective et de la performance).
+Fichiers open data publiés par le ministère de l'Éducation nationale (Depp) sur
+[data.education.gouv.fr](https://data.education.gouv.fr), tous filtrés sur
+`académie = LILLE` (départements du Nord et du Pas-de-Calais).
 
-## Contenu du dépôt
+| Niveau | Jeux de données | Millésimes |
+|---|---|---|
+| Écoles | `fr-en-ips_ecoles_v2` + `fr-en-ips-ecoles-ap2022` | 2016-2017 → **2024-2025** |
+| Collèges | `fr-en-ips_colleges` + `fr-en-ips-colleges-ap2022` + `fr-en-ips-colleges-ap2023` | 2016-2017 → **2025-2026** |
+| Lycées | `fr-en-ips_lycees` + `fr-en-ips-lycees-ap2022` + `fr-en-ips-lycees-ap2023` | 2016-2017 → **2025-2026** |
 
-| Fichier | Description |
+Le fichier lycées `ap2023` a été récupéré via l'API Opendatasoft (subset académie de
+Lille). Les libellés propres et les coordonnées géographiques proviennent des
+exports `donnees-ips-*.csv` (rentrée 2023-2024).
+
+## Périmètre du fichier consolidé
+
+**2 642 établissements** encore en activité : 1 980 écoles, 437 collèges, 225 lycées.
+
+Sont **exclus** : les établissements fermés ou fusionnés (pas d'IPS sur le dernier
+millésime disponible) et les ~100 petites écoles rurales sans IPS publié.
+
+## Points de vigilance (à rappeler dans la méthodo publiée)
+
+- **Comparabilité 2022-2023 pour le privé sous contrat** : la Depp signale une
+  rupture de série pour les établissements privés à cette date (meilleure remontée
+  des PCS des deux parents). L'évolution avant / après 2022-2023 d'un établissement
+  privé est donc à interpréter avec prudence.
+- **Le dernier millésime diffère selon le niveau** : écoles arrêtées à 2024-2025,
+  collèges et lycées à 2025-2026.
+- **14 écoles** sans coordonnées géographiques (non retrouvées dans les fichiers
+  géolocalisés) : pas de point sur la carte, mais présentes dans la recherche.
+- L'IPS d'un lycée « d'ensemble » combine voie générale et technologique (GT) et
+  voie professionnelle (PRO) ; `ips_gt` et `ips_pro` sont fournis séparément.
+
+## Fichiers du dépôt
+
+| Fichier | Rôle |
 |---|---|
-| `donnees-ips-ecoles.csv` | Source brute écoles (séparateur `;`) |
-| `donnees-ips-colleges.csv` | Source brute collèges |
-| `donnees-ips-lycees.csv` | Source brute lycées |
-| `build.py` | Script de consolidation des trois fichiers |
-| `ips.json` | **Fichier consolidé consommé par l'app** (2 766 établissements) |
-| `ips.csv` | Même contenu au format CSV |
+| `ips.json` | **Fichier consommé par l'app** (2 642 établissements + historique) |
+| `ips.csv` | Même contenu, une colonne par millésime |
+| `build.py` | Script de consolidation (reproductible depuis les CSV du dépôt) |
 | `PROMPT-LOVABLE.md` | Brief à coller dans Lovable |
+| `donnees-ips-*.csv` | Exports source rentrée 2023-2024 (libellés + géoloc) |
+| `fr-en-ips*.csv` | Séries historiques source |
 
 ## Schéma de `ips.json`
 
@@ -54,28 +81,23 @@ Fichiers publiés en open data par le ministère de l'Éducation nationale sur
   "code_commune": "59350",
   "departement": "Nord | Pas-de-Calais",
   "secteur": "public | privé sous contrat",
-  "ips": 76.0,
-  "ips_gt": 130.4,   // lycées uniquement (voie générale et technologique)
-  "ips_pro": 117.0,  // lycées uniquement (voie professionnelle)
+  "ips": 76.2,                 // dernier millésime disponible
+  "annee": "2025-2026",
+  "ips_gt": 130.4,             // lycées : voie générale et technologique
+  "ips_pro": 117.0,            // lycées : voie professionnelle
+  "evolution": 4.3,            // IPS dernier millésime − IPS premier millésime connu
   "lat": 50.641243,
-  "lon": 3.011502
+  "lon": 3.011502,
+  "historique": [
+    { "annee": "2016-2017", "ips": 71.9 },
+    { "annee": "2017-2018", "ips": 72.4 },
+    ...
+    // pour les lycées, chaque point porte aussi "gt" et "pro" quand ils existent
+  ]
 }
 ```
 
-Pour les lycées, `ips` reprend l'IPS d'ensemble (voie GT + voie pro) quand il existe,
-sinon l'IPS de la seule voie renseignée.
-
-## Points de vigilance
-
-- **134 écoles** (petites structures rurales, regroupements pédagogiques
-  intercommunaux) n'ont **pas d'IPS publié** dans la source : `ips` y est `null`.
-  L'app doit afficher « non communiqué » et non « 0 ».
-- Les coordonnées `lat`/`lon` proviennent de la colonne `position` des fichiers
-  source (présente pour 100 % des établissements).
-- L'IPS n'est pas une note de qualité d'un établissement : c'est une photographie
-  de son recrutement social.
-
-## Régénérer `ips.json`
+## Régénérer les données
 
 ```bash
 python build.py
