@@ -46,6 +46,26 @@ exports `donnees-ips-*.csv` (rentrée 2023-2024).
 Sont **exclus** : les établissements fermés ou fusionnés (pas d'IPS sur le dernier
 millésime disponible) et les ~100 petites écoles rurales sans IPS publié.
 
+## Pourquoi tel établissement n'apparaît pas ?
+
+La couverture est celle des **fichiers open data de la Depp**, pas celle de
+l'annuaire de l'Éducation nationale. Trois cas d'absence, tous côté source :
+
+1. **Les écoles maternelles ne sont jamais concernées.** La Depp ne calcule l'IPS
+   qu'à partir du niveau élémentaire. Les ~775 maternelles du Nord et du
+   Pas-de-Calais n'ont pas d'IPS (ex. à Roubaix : maternelles Albert Samain,
+   Alphonse Daudet, Jacques Prévert, Paul Valéry).
+2. **Environ 260 écoles élémentaires** de l'académie n'ont pas d'IPS publié
+   (effectifs trop faibles, taux de réponse PCS insuffisant, ouverture récente →
+   valeur « NS », non significative). Sur ~2 250 écoles élémentaires de l'annuaire,
+   la Depp en couvre ~1 990. Ex. : école primaire Henri Carrette à Roubaix.
+3. **Établissements fermés ou fusionnés** depuis 2016 : écartés car sans IPS sur le
+   dernier millésime.
+
+Vérifier un cas signalé : chercher l'UAI dans l'[annuaire de l'éducation](https://data.education.gouv.fr/explore/dataset/fr-en-annuaire-education/)
+(nature de l'établissement = maternelle ou élémentaire ?) puis dans le jeu
+`fr-en-ips-ecoles-ap2022` (l'IPS y est-il présent, ou absent / « NS » ?).
+
 ## Points de vigilance (à rappeler dans la méthodo publiée)
 
 - **Comparabilité 2022-2023 pour le privé sous contrat** : la Depp signale une
