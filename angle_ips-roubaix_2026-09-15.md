@@ -2,6 +2,8 @@
 
 *Préparé le 2026-09-15 pour un sujet sur l'IPS à Roubaix. Données : Depp, académie de Lille, millésimes 2016-2017 à 2025-2026 (écoles jusqu'à 2024-2025). Script source : `analyse_roubaix.py`.*
 
+**Décision éditoriale (2026-09-15) : conformément à la consigne de la Depp, aucune comparaison temporelle n'est faite entre les IPS d'avant et d'après 2022-2023. Toute évolution présentée ci-dessous est calculée exclusivement à l'intérieur de la période 2022-2023 → dernier millésime.**
+
 ---
 
 ## 1. Contexte
@@ -77,7 +79,7 @@ Roubaix est donc **18 à 19 points sous la moyenne académique** (école et coll
 
 **[Angle fort, contre-intuitif]** À l'école et au collège, l'écart social interne à Roubaix représente à lui seul **86 à 91 % de l'écart observé sur l'ensemble de l'académie de Lille** (2 642 établissements, Nord et Pas-de-Calais réunis). Autrement dit : il n'est pas nécessaire de quitter Roubaix pour trouver, en miniature, quasiment toute l'étendue des inégalités sociales scolaires du Nord–Pas-de-Calais. La fracture n'est pas seulement entre Roubaix et le reste de la région — elle traverse la ville elle-même, rue par rue, entre écoles Jeanne d'Arc (148) et Buffon (63).
 
-### ana_09 — Une remontée en trompe-l'œil depuis 2022-2023 ?
+### ana_09 — Pourquoi on ne compare pas avant/après 2022-2023 (et ce qui reste fiable)
 En comparant l'évolution médiane d'une année « témoin » normale (2020-2021 → 2021-2022) à celle de l'année où la Depp signale une rupture méthodologique (2021-2022 → 2022-2023) :
 
 | | Année témoin (normale) | Année de rupture (2022-2023) |
@@ -87,9 +89,11 @@ En comparant l'évolution médiane d'une année « témoin » normale (2020-2021
 | **Écoles publiques, Roubaix** | +0,8 | **+4,9** |
 | **Écoles privées, Roubaix** | +0,7 | **+7,1** |
 
-**[Angle fort, à traiter avec prudence — verif-data]** Le saut de 2022-2023 est environ **5 fois plus marqué à Roubaix que sur l'ensemble de l'académie**, et il touche identiquement le public et le privé. La Depp ne documente explicitement cette rupture que pour le privé sous contrat (meilleure remontée des PCS des deux parents). Mais le même schéma — plat ou en légère baisse de 2016 à 2021, puis bond net en 2022-2023, puis reprise d'une hausse plus modérée — s'observe systématiquement sur les écoles publiques les plus concernées (Pierre de Roubaix +9,7 en un an, Littré +6,3, Léo Lagrange +5,4).
+Le saut de 2022-2023 est environ **5 fois plus marqué à Roubaix que sur l'ensemble de l'académie**, et touche identiquement le public et le privé — alors que la Depp ne documente cette rupture que pour le privé. **C'est ce constat qui justifie la décision éditoriale de ne publier aucune comparaison franchissant 2022-2023** (voir encadré en tête de note) : toute hausse « depuis 2016 » à Roubaix serait très probablement un artefact de méthode, pas un progrès social réel.
 
-**Hypothèse à formuler avec prudence, pas comme un fait établi :** un ajustement méthodologique nationalement documenté pour le privé pourrait avoir eu un effet mécanique plus fort à Roubaix parce que le taux de non-réponse ou de déclaration imprécise des PCS parentales y était structurellement plus élevé (chômage, emploi informel) — sa correction gonflerait alors l'IPS sans traduire une évolution sociale réelle des familles. **Cette hypothèse mériterait une question directe à la Depp ou à un chercheur (ex. Julien Grenet) avant publication** — ne pas présenter la hausse récente des IPS roubaisiens comme une amélioration sociale démontrée.
+**Ce qu'on peut dire, en restant strictement à l'intérieur de la période 2022-2023 → dernier millésime :** sur les 65 établissements roubaisiens, l'évolution est majoritairement stable (médiane à 0,0). Deux mouvements sortent du lot :
+- **Collège privé Saint Michel : −12,0 points** (89,6 → 77,6 entre 2022-2023 et 2025-2026) — la seule vraie baisse nette et exploitable de tout le corpus roubaisien, sans piège méthodologique connu à ce stade.
+- **Lycée général Jean Rostand : +19,9 points en façade — mais à ne pas publier tel quel.** Même restreinte à 2022-2023 → 2025-2026, cette évolution reste contaminée : la Depp n'a commencé à isoler l'IPS post-bac (BTS) qu'à partir de 2023-2024, donc le point de départ 2022-2023 (81,6) ne portait que sur la voie GT, quand le point d'arrivée (101,5) mélange GT et BTS. Voir détail en ana_05bis. **À exclure de toute courbe ou tout chiffre d'évolution, quelle que soit la période choisie.**
 
 ---
 
@@ -126,9 +130,9 @@ Montrer que l'écart public/privé, énorme à l'école (+23) et au collège (+2
 Chiffrer l'écart avec la moyenne académique et nationale : ~19 points sous l'académie, ~26 sous la France, à l'école et au collège.
 `[éditorial + ana_07]`
 
-**§6 — Prudence sur les chiffres récents [ana_09, ctx_04]**
-Section la plus délicate à rédiger : expliquer que les IPS roubaisiens progressent depuis 2022-2023, mais que ce bond est cinq fois plus fort qu'ailleurs dans l'académie, coïncide avec une révision méthodologique nationale documentée par la Depp (pour l'instant seulement pour le privé), et ne doit donc pas être présenté comme une preuve d'amélioration sociale sans vérification complémentaire. Recommandation : contacter la Depp ou un chercheur (Julien Grenet, École d'économie de Paris) avant de trancher.
-`[éditorial + ana_09 + ctx_03, ctx_04]`
+**§6 — Encadré méthodo : pourquoi pas de courbe dans le temps [ana_09, ctx_04]**
+Expliquer en quelques lignes pourquoi l'article ne compare pas les IPS d'avant et d'après 2022-2023 (rupture méthodologique documentée par la Depp, effet 5 fois plus marqué à Roubaix qu'ailleurs). Mentionner en positif ce qui reste exploitable sur la période récente : le collège privé Saint Michel, seule vraie baisse nette (−12 points depuis 2022-2023).
+`[éditorial + ana_09 + ctx_04]`
 
 **§7 — Ce qui manque aux données [ana_02]**
 Un encadré court : les maternelles n'ont jamais d'IPS, une poignée d'écoles élémentaires (dont Henri Carrette, REP+) n'ont pas de valeur publiée. Utile en anticipation des réactions de lecteurs.
