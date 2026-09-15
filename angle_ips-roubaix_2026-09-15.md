@@ -63,11 +63,14 @@ La voie GT (les vrais lycéens) est stable, voire en léger recul (85,9 → 80,7
 |---|---|---|---|
 | Écoles | **79,6** | 98,5 | 105,8 |
 | Collèges | **80,6** | 99,8 | 106,2 |
-| Lycées (voie GT, réf. officielle) | — | 114,2 | 120,2 |
+| Lycées — voie GT (n=7) | **95,0** | 114,2 | 120,2 |
+| Lycées — voie PRO (n=7) | **80,2** | 81,6 | 89,9 |
 
-Sources références académie/France : Depp, `fr-en-ips-ecoles-ap2022` (2024-2025), `fr-en-ips-colleges-ap2023` (2025-2026), `fr-en-ips-lycees-ap2023` (2025-2026) — colonnes IPS académique/national officielles.
+Sources références académie/France : Depp, `fr-en-ips-ecoles-ap2022` (2024-2025), `fr-en-ips-colleges-ap2023` (2025-2026), `fr-en-ips-lycees-ap2023` (2025-2026) — colonnes IPS académique/national officielles. Le lycée est scindé en deux voies : les deux IPS (GT et PRO) ne sont pas comparables entre eux, seulement au sein de la même voie. La ligne « ensemble » (mêlant GT, PRO et parfois post-bac) n'est pas présentée ici, voir la mise en garde ana_05bis sur ce risque.
 
-Roubaix est donc **18 à 19 points sous la moyenne académique** (école et collège), elle-même déjà 7 à 8 points sous la moyenne nationale. Cumulé : les écoles et collèges roubaisiens affichent un IPS moyen inférieur d'environ **26 points à la moyenne nationale** — l'équivalent, sur l'échelle IPS, de l'écart entre un établissement REP+ typique et un établissement de centre-ville favorisé.
+**Fait notable :** contrairement à l'école et au collège, l'écart de la voie professionnelle à Roubaix avec l'académie est faible (80,2 vs 81,6, soit −1,4 point) — la voie pro roubaisienne n'est pas plus défavorisée que la moyenne régionale de la voie pro. C'est la voie GT qui creuse l'écart (95,0 vs 114,2, soit −19,2 points), cohérent avec le constat ana_06 : le vrai clivage lycéen à Roubaix est filière générale/techno vs professionnelle, pas secteur public/privé.
+
+Roubaix est donc **18 à 19 points sous la moyenne académique** (école et collège), elle-même déjà 7 à 8 points sous la moyenne nationale. Cumulé : les écoles et collèges roubaisiens affichent un IPS moyen inférieur d'environ **26 points à la moyenne nationale** — l'équivalent, sur l'échelle IPS, de l'écart entre un établissement REP+ typique et un établissement de centre-ville favorisé. Au lycée, l'écart est du même ordre pour la voie générale et technologique (−19,2 points vs l'académie, −25,2 vs la France) mais quasi nul pour la voie professionnelle (−1,4 point vs l'académie) — la voie pro roubaisienne n'est pas un point faible local, elle reflète simplement une moyenne régionale déjà basse.
 
 ### ana_08 — Roubaix, un raccourci de l'académie entière
 Écart interne (établissement le plus favorisé − le moins favorisé) :
